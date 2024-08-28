@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<style>
+     body
+        {
+            font-family: 'Lobster', cursive;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            background: url(spsssdskld.webp);
+            background-size: cover;
+        }
+    /* Style for the "Show Counter" button */
+.showButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.showButton:hover {
+  background-color: #555;
+}
+
+/* Style for the increase and decrease buttons */
+.decreaseButton,
+.increaseButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.decreaseButton:hover,
+.increaseButton:hover {
+  background-color: #555;
+}
+
+/* Style for the quantity display */
+.quantity {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* Style for the entire counter container */
+.counter {
+  display: flex;
+  align-items: center;
+}
+
+</style>
+<body>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR9JUUJHnb6k06lPBcon1J-6G8P63o6VY81yL_Cw_s74cUVzxll0htX0n8ceBhg2-w6dRLiQ_U7bGDA7wYzajZJY2QledUrTJmfID-tTTSAPhijCcHqQS0g6A&usqp=CAE" alt="Product 1">
+        <h3>MUSCLEBLAZE Creatine Monohydrate, India's Only Labdoor USA Certified Creatine Creatine (100 g, Unflavored)</h3>
+        <p>MuscleBlaze brings to you the Micronized Creatine Monohydrate – a pure, unadulterated, creatine monohydrate that absorbs instantly into your body to give a continuous supply of energy to your muscles during intense activities.</p>
+        <button class="showButton">Show Counter</button>
+        <div class="counter" style="display: none;">
+          <button class="decreaseButton">-</button>
+          <span class="quantity">0</span>
+          <button class="increaseButton">+</button>
+        </div>
+      </div>
+      
+      <div class="product">
+        <img src="https://rukminim1.flixcart.com/image/612/612/xif0q/protein-supplement/m/k/d/pre-workout-omega-3-fish-oil-1000-mg-30-capsules-with-pre-original-imagh57tphzxzphf.jpeg?q=70" alt="Product 2">
+        <h3>MUSCLEBLAZE Omega 3 Fish Oil 1000 mg with Pre Workout 200 Xtreme Pre Workout (100 g, 30 Capsules, Fruit Punch)</h3>
+        <p>MuscleBlaze Omega 3 Fish Oil Capsules 1000mg is now India's first & only certified Fish Oil for Purity & Accuracy by the reputed lab Labdoor, USA. It contains omega 3 fatty acids including 180mg EPA and 120mg DHA. It helps in keeping athletes & bodybuilders fit & active. Regular consumption of omega 3 fish oil capsules helps enhance post-workout recovery & minimize workout-related joint stiffness. These omega 3 fish oil capsules provide good fats & antioxidants to encourage good heart health & brain function. MuscleBlaze Pre-Workout 200 Xtreme is a potent pre workout formula that is crafted to let your body prepare itself for intense workouts. Each serving is power-packed with 4 proven pre-workout ingredients - Caffeine, Theanine, Beta Alanine & L-Citrulline.</p>
+        <button class="showButton">Show Counter</button>
+        <div class="counter" style="display: none;">
+          <button class="decreaseButton">-</button>
+          <span class="quantity">0</span>
+          <button class="increaseButton">+</button>
+        </div>
+      </div>
+      
+      <!-- Add more product sections as needed with unique class names and IDs -->
+      
+</body>
+<script>
+   // Get all the elements with the specified class name
+const showButtons = document.querySelectorAll('.showButton');
+const counterElements = document.querySelectorAll('.counter');
+const decreaseButtons = document.querySelectorAll('.decreaseButton');
+const increaseButtons = document.querySelectorAll('.increaseButton');
+const quantityElements = document.querySelectorAll('.quantity');
+
+// Initialize counters for each product
+const counters = Array.from({ length: showButtons.length }, () => 0);
+
+// Function to update and display the counter for a specific product
+function updateCounter(index) {
+  quantityElements[index].textContent = counters[index];
+}
+
+// Add event listeners for each show button
+showButtons.forEach((button, index) => {
+  button.addEventListener('click', function () {
+    counterElements[index].style.display = 'block';
+    updateCounter(index);
+  });
+});
+
+// Add event listeners for each decrease button
+decreaseButtons.forEach((button, index) => {
+  button.addEventListener('click', function () {
+    if (counters[index] > 0) {
+      counters[index]--;
+      updateCounter(index);
+    }
+  });
+});
+
+// Add event listeners for each increase button
+increaseButtons.forEach((button, index) => {
+  button.addEventListener('click', function () {
+    counters[index]++;
+    updateCounter(index);
+  });
+});
+
+</script>
+</html>

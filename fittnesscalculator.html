@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fitness Calculator - Gym Supplements</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	
+</head>
+<style>
+    /* Global styles */
+body {
+	font-family: Arial, sans-serif;
+	font-family: 'Lobster', cursive;
+
+	margin: 0;
+	padding: 0;
+}
+body {
+  background-image: url('https://www.calculators.org/graphics/asian-woman.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/* Header styles */
+/* header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+} */
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+/* Fitness Calculator styles */
+.fitness-calculator {
+	padding: 50px;
+}
+
+.fitness-calculator h1 {
+	font-size: 36px;
+	margin: 0 0 20px 0;
+}
+
+.fitness-calculator form {
+	margin-top: 20px;
+}
+
+.fitness-calculator label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.fitness-calculator input[type="number"],
+.fitness-calculator select {
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+}
+
+.fitness-calculator input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.fitness-calculator input[type="submit"]:hover {
+	background-color: #666;
+}
+
+.result {
+	margin-top: 20px;
+	border: 1px solid #ccc;
+}
+body {
+		font-family: 'Lobster', cursive;
+		color: white;
+		margin: 0px;
+		padding: 0px;
+		background: url(spsssdskld.webp);
+		background-size: cover;
+	}
+
+	.left {
+		/* font-size: 12px; */
+		position: absolute;
+		left: 34px;
+		top: 20px;
+		display: inline-block;
+		/* border: 2px solid red; */
+	}
+
+	.left img {
+		padding-left: 13px;
+		width: 64px;
+		height: 68px;
+	}
+
+	.left div {
+		line-height: 19px;
+		font-size: 17px;
+		text-align: center;
+	}
+
+	.mid {
+		display: block;
+		width: 55%;
+		margin: 20px auto;
+		border: 2px solid rgb(9, 8, 11);
+		background-color: #3e495a;
+		border-radius: 30px;
+
+	}
+
+	.right {
+		position: absolute;
+		right: 34px;
+		top: 20px;
+		/* border: 2px solid rgb(70, 192, 225); */
+
+	}
+
+	.navbar {
+		display: inline-block;
+	}
+
+	.navbar li {
+		display: inline-block;
+		font-size: 20px;
+	}
+
+	.navbar li a {
+		color: rgb(245, 244, 244);
+		/* display: inline; */
+		text-decoration: none;
+		padding: 34px 15px;
+	}
+
+	.navbar li a:hover,
+	.navbar li a:active {
+		text-decoration: underline;
+		color: rgb(118, 110, 103);
+		display: inline;
+		padding: 34px 15px;
+	}
+</style>
+<body>
+	<!-- <header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="fittnesscalculator.html">Fitness-Calculator</a></li>
+				<li><a href="supplement.html">Supplement</a></li>
+				<li><a href="Aboutus.html">About Us</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header> -->
+	<header class="header">
+		<!-- left box for logo -->
+		<div class="left">
+			<img src="gymlogo2.jpg" alt="">
+			<div>Shank fitness</div>
+		</div>
+		<!-- Mid box for navbar -->
+		<div class="mid">
+			<ul class="navbar">
+				<li><a href="index.html" class="active">Home</a></li>
+				<li><a href="fittnesscalculator.html">Fitness Calculator</a></li>
+				<li><a href="supplement.html" target="_blank">Supplementry</a></li>
+				<li><a href="Aboutus.html">About Us</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+		<!-- Right box for button  -->
+		<!-- <div class="right">
+            <button class="btn">Free Trial</button>
+            <a href="new.html">
+            <button class="btn" >Sign in</button></a>
+        </div> -->
+	</header>
+	<div class="fitness-calculator">
+		<h1>Fitness Calculator</h1>
+		<form>
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age" required>
+
+			<label for="gender">Gender:</label>
+			<select id="gender" name="gender" required>
+				<option value="">Select</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+
+			<label for="height">Height (in cm):</label>
+			<input type="number" id="height" name="height" required>
+
+			<label for="weight">Weight (in kg):</label>
+			<input type="number" id="weight" name="weight" required>
+
+			<input type="submit" value="Calculate">
+		</form>
+
+		<div class="result">
+			<h2>Result:</h2>
+			<p>Your BMI is :<span id="bmi"></span>.</p>
+			<p>Your BMR is :<span id="bmr"></span> calories per day.</p>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; 2023 Gym Supplements</p>
+	</footer>
+
+	<script >
+		// Function to calculate BMI
+function calculateBMI() {
+  // Get user input values
+  const age = parseFloat(document.getElementById("age").value);
+  const gender = document.getElementById("gender").value;
+  const height = parseFloat(document.getElementById("height").value);
+  const weight = parseFloat(document.getElementById("weight").value);
+
+  // Check if input values are valid
+  if (isNaN(age) || isNaN(height) || isNaN(weight) || gender === "") {
+    alert("Please fill in all fields with valid values.");
+    return;
+  }
+
+  // Calculate BMI
+  const heightInMeters = height / 100; // Convert height from cm to meters
+  const bmi = weight / (heightInMeters * heightInMeters);
+
+  // Display BMI result
+  const bmiResult = document.getElementById("bmi");
+  bmiResult.textContent = bmi.toFixed(2); // Display BMI rounded to two decimal places
+
+  // Calculate BMR based on gender
+  let bmr;
+  if (gender === "male") {
+    // For males: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) - (5.677 x age in years)
+    bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+  } else if (gender === "female") {
+    // For females: BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) - (4.330 x age in years)
+    bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+  }
+
+  // Display BMR result
+  const bmrResult = document.getElementById("bmr");
+  bmrResult.textContent = bmr.toFixed(2); // Display BMR rounded to two decimal places
+}
+
+// Attach the calculateBMI function to the form's submit event
+const form = document.querySelector("form");
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the default form submission
+  calculateBMI(); // Call the BMI and BMR calculation function
+});
+
+// Initially, set the BMI and BMR fields to empty
+const bmiResult = document.getElementById("bmi");
+const bmrResult = document.getElementById("bmr");
+bmiResult.textContent = "";
+bmrResult.textContent = "";
+
+	</script>
+</body>
+</html>
